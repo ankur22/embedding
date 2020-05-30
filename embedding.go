@@ -34,6 +34,7 @@ func (r *retryableHTTPClient) Get(url string) (resp *http.Response, err error) {
 		// Success, don't retry
 		return nil
 	}, r.b)
+	r.b.Reset()
 	return
 }
 
